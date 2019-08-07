@@ -54,5 +54,7 @@ for card in missing_cards:
     except KeyError:
         print(f'{card_name} not found')
 
+if not os.path.exists('outputs'):
+    os.makedirs('outputs')
 with open(os.path.join('outputs', f'{filename}.html'), 'w+') as out_file:
     out_file.write(soup.prettify())
